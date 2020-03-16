@@ -15,5 +15,5 @@ fails with _too many retries_ error. When running both threads (MLX and
 camera capture), the Pi camera thread limits itself to 10 frames/sec to avoid
 similar _too many retries_ errors.
 
-## Author skip.tavakkolian@gmail.com
+### Author skip.tavakkolian@gmail.com
 
