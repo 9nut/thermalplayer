@@ -17,6 +17,7 @@ class VidThread(QObject):
     go = pyqtSignal()
     width = 0
     height = 0
+    mirror = False
 
     def __init__(self):
         super().__init__()
@@ -29,11 +30,18 @@ class VidThread(QObject):
         while True:
             ret, frame = cap.read()
             if ret:
-                img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                h, w, ch = img.shape
+                if self.mirror:
+                    frame = cv2.flip(frame, 1) 
+
+                # img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                # h, w, ch = img.shape
+                h, w = img.shape
+                ch = 1
                 stride = w * ch
 
-                qimg = QImage(img.data, w, h, stride, QImage.Format_RGB888)
+                # qimg = QImage(img.data, w, h, stride, QImage.Format_RGB888)
+                qimg = QImage(img.data, w, h, stride, QImage.Format_Grayscale8)
                 qpix = QPixmap.fromImage(qimg)
                 qpix = qpix.scaled(self.width, self.height, Qt.KeepAspectRatio)
                 self.changePixmap.emit(qpix)

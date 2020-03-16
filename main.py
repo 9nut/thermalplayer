@@ -31,7 +31,8 @@ class ThermalPlayer(QWidget):
         self.topmargin = 50
         self.width = 640
         self.height = 480
-        self.heatpix = None
+        self.heatpix = QPixmap(640,480)
+        self.heatpix.fill(Qt.transparent)
         self.campix = None
         self.heatpixlock = threading.Lock()
         self.initUI()
@@ -42,14 +43,14 @@ class ThermalPlayer(QWidget):
         # Currently campix isn't used, but if used
         # it needs to be deep copied.
         self.campix = pixmap.copy()
-        dispix = pixmap
 
         # Image compositing
+        dispix = pixmap
         painter = QPainter(dispix)
         painter.setRenderHint(QPainter.Antialiasing)
         # painter.setCompositionMode(QPainter.CompositionMode_Plus)
-        # painter.setCompositionMode(QPainter.CompositionMode_Screen)
-        painter.setCompositionMode(QPainter.CompositionMode_HardLight)
+        painter.setCompositionMode(QPainter.CompositionMode_Screen)
+        # painter.setCompositionMode(QPainter.CompositionMode_HardLight)
         # painter.setCompositionMode(QPainter.CompositionMode_SourceAtop)
 
         # setHeat callback also accesses heatpix
@@ -89,6 +90,7 @@ if __name__ == '__main__':
     vth = VidThread()
     vth.width = myapp.width
     vth.height = myapp.height
+    vth.mirror = True
     vth.changePixmap.connect(myapp.setImage)
     vth.moveToThread(vthread)
     vth.go.emit()

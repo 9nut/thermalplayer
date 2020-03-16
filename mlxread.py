@@ -46,9 +46,9 @@ def gradient(x, width, cmap, spread=1):
 
 class MLXThread(QObject):
     #low range of the sensor (this will be black on the screen)
-    MINTEMP = -40.
+    MINTEMP = 20.
     #high range of the sensor (this will be white on the screen)
-    MAXTEMP = 300.
+    MAXTEMP = 50.
     #how many color values we can have
     COLORDEPTH = 1000
     heatmap = (
