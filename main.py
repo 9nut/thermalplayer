@@ -1,11 +1,10 @@
 '''
-Player to mix Pi camera output with the mlx90640 thermal camera output.
-Each capture is run in its own thread and their output (received using
-Signal/Slot mechanism) are combined in the player thread. The refersh
-happends on the receiver of the Pi camera since it has a faster capture
-rate. A mutex is used to serialize access to thermal image pixmap.
-
-Author: skip.tavakkolian@gmail.com
+A simple player that mixes the Pi camera output with the mlx90640 thermal
+camera output into one stream.  Each capture is run in its own thread and
+their outputs (received using Signal/Slot mechanism) are combined in the
+player thread. The refersh happends on the receiver of the Pi camera since
+it has a faster capture rate. A mutex is used to serialize access to thermal
+image pixmap.
 '''
 import sys
 import threading

@@ -1,10 +1,8 @@
 '''
 Camera capture using OpenCV. This class provides
-the functionality needed to run an object of this
+the basic functionality to run an object of the
 type in its own thread. Each captured frame is forwarded
 to a reciever using the Signal/Slot mechanism.
-
-Author: skip.tavakkolian@gmail.com
 '''
 import cv2
 import sys

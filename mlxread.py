@@ -1,11 +1,9 @@
 """
 Image capture using Adafruit MLX90640 thermal camera.
-class provides the structure needed to run the MLX reader
+This class provides the structure needed to run the MLX reader
 in its own thread. The captured frame is forwarded to a receiver
 using the Signal/Slot mechanism. The utility functions and
 heatmap coefficients come from Adafruit's example code.
-
-Author: skip.tavakkolian@gmail.com
 """
 
 import os
