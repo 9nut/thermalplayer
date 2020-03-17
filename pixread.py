@@ -8,7 +8,7 @@ Author: skip.tavakkolian@gmail.com
 '''
 import cv2
 import sys
-from PyQt5.QtWidgets import  QWidget, QLabel, QApplication
+
 from PyQt5.QtCore import QObject, QThread, Qt, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QImage, QPixmap
 

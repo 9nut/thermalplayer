@@ -16,11 +16,8 @@ import busio
 
 from PIL import Image
 from PIL.ImageQt import ImageQt
-import cv2
-import sys
-from PyQt5.QtWidgets import  QWidget, QLabel, QApplication
-from PyQt5.QtCore import QObject, QThread, Qt, pyqtSignal, pyqtSlot
-from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
+from PyQt5.QtGui import QPixmap
 
 import adafruit_mlx90640
 

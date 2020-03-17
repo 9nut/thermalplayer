@@ -7,16 +7,12 @@ rate. A mutex is used to serialize access to thermal image pixmap.
 
 Author: skip.tavakkolian@gmail.com
 '''
-import cv2
 import sys
 import threading
-import copy
 
 from PyQt5.QtWidgets import  QWidget, QLabel, QApplication
-from PyQt5.QtCore import QThread, Qt, pyqtSignal, pyqtSlot, QPoint, QSize
-from PyQt5.QtGui import QImage, QPixmap, QPainter
-
-from PIL import Image
+from PyQt5.QtCore import QThread, Qt, pyqtSignal, pyqtSlot, QPoint
+from PyQt5.QtGui import QPixmap, QPainter
 
 from pixread import VidThread
 from mlxread import MLXThread
