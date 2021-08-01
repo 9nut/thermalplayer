@@ -23,3 +23,6 @@ MIT
 ### Authors
 Skip Tavakkolian
 
+### Pictures
+
+![RPI3B+ with MLX90640](https://github.com/9nut/thermalplayer/blob/master/rpi3_mlx90640_thermalplayer.jpeg?raw=true)
