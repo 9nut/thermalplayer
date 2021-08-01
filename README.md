@@ -4,6 +4,8 @@ A simple Python3 player that scales and blends the output of an Adafruit
 MLX90640 thermal camera with the Pi camera output into one output stream.
 MLX90640 has a resolution of 32×24 pixels.
 
+![example output animated gif](https://github.com/9nut/thermalplayer/blob/master/thermalplayer.gif?raw=true)
+
 ### Run
 ```
 $ python main.py
